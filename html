@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Eu te amo, você é muito especial meu amor! 💌</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #e91e63;
+      margin-bottom: 30px;
+    }
+
+    .fotos img {
+      width: 230px;
+      margin: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #e91e63;
+    }
+
+    #carta {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffe4ec;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #f48fb1;
+      display: none;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1s ease, transform 0.5s ease;
+      white-space: pre-wrap;
+      text-align: left;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    #carta.mostrar {
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    button {
+      background-color: #e91e63;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+
+    a.playlist {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: #ff4081;
+      padding: 12px 24px;
+      color: white;
+      border-radius: 10px;
+    }
+
+    a.playlist:hover {
+      background-color: #d81b60;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Eu te amo, você é muito especial princesa! 💖</h1>
+
+  <div class="fotos">
+    <img src="IMG-20241230-WA0041.jpg" alt="nós dois">
+    <img src="IMG-20250115-WA0041.jpg" alt="nós dois">
+  </div>
+
+  <video width="320" height="240" controls>
+    <source src="VID-20240823-WA0125.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo 😢
+  </video>
+
+  <br>
+  <a class="playlist" href="https://drive.google.com/drive/folders/1okHCehQ9f-K_RPZozqRLX0eeN8fSvXvt?usp=drive_link" target="_blank">📂 Ver mais fotos</a>
+
+  <br><br>
+  <button onclick="mostrarCarta()">Clique aqui para ler minha carta 💌</button>
+
+  <div id="carta">
+    Meu amor,
+
+    Desde que você entrou na minha vida, tudo ganhou mais cor, mais sentido, mais leveza. 
+    Cada momento com você é um presente que a vida me deu. 
+    Estou buscando ser melhor todos os dias — por nós, por você.
+    Você é linda e maravilhosa, não se sinta menor que isso. 
+
+   
+    Eu te amo infinitamente ❤️
+  </div>
+
+  <br>
+  <a class="playlist" href="https://open.spotify.com/playlist/2pn9GTBPhWnLdswek5gp7b?si=U9Nksu4YTdewCOhi36CpFg&pi=2dpF90hNSdaLj" target="_blank">🎵 Ouça nossa playlist</a>
+
+  <script>
+    function mostrarCarta() {
+      const carta = document.getElementById("carta");
+      carta.classList.add("mostrar");
+    }
+  </script>
+
+  <style>
+  /* Estilo dos corações brancos */
+  .coracao {
+    position: fixed;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    transform: rotate(45deg);
+    animation: flutuar 5s linear infinite;
+    opacity: 0.8;
+    z-index: 9999;
+    filter: drop-shadow(0 0 2px #e91e63);
+  }
+  .coracao::before,
+  .coracao::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+  }
+  .coracao::before {
+    top: -10px;
+    left: 0;
+  }
+  .coracao::after {
+    left: 10px;
+    top: 0;
+  }
+
+  @keyframes flutuar {
+    0% {
+      transform: translateY(0) rotate(45deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(45deg);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  function criarCoracao() {
+    const coracao = document.createElement('div');
+    coracao.classList.add('coracao');
+    coracao.style.left = Math.random() * window.innerWidth + 'px';
+    coracao.style.animationDuration = (4 + Math.random() * 3) + 's';
+    document.body.appendChild(coracao);
+    setTimeout(() => {
+      coracao.remove();
+    }, 7000);
+  }
+  
+  setInterval(criarCoracao, 400);
+</script>
+
+</body>
+</html>
